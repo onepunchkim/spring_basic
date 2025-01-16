@@ -1,9 +1,7 @@
 package hello.core.beanfind;
 
-import hello.core.AppConfig;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoUniqueBeanDefinitionException;
@@ -14,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.Map;
 
 import static org.assertj.core.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ApplicationContextSameBeanFindTest {
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(SameBeanConfig.class);
@@ -22,7 +21,7 @@ class ApplicationContextSameBeanFindTest {
     @DisplayName("타입으로조회시 같은 타입이 둘 이상 있으면, 중복 오류가 발생한다")
     void findBeanByTypeDuplicate() {
         //MemberRepository bean = ac.getBean(MemberRepository.class);
-        Assertions.assertThrows(NoUniqueBeanDefinitionException.class, () -> ac.getBean(MemberRepository.class));
+        assertThrows(NoUniqueBeanDefinitionException.class, () -> ac.getBean(MemberRepository.class));
     }
 
     @Test
