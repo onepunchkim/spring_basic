@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class StatefulServiceTest {
 
-    @Test //값은 변경하지 못하게 return으로 넘긴다.
+    @Test
     void statefulServiceSingleton() {
         ApplicationContext ac = new AnnotationConfigApplicationContext(TestConfig.class);
         StatefulService statefulService1 = ac.getBean("statefulService", StatefulService.class);
