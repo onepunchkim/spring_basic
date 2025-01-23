@@ -1,4 +1,4 @@
-package hello.core;
+package hello.core.scope;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
